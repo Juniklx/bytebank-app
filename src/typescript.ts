@@ -10,13 +10,20 @@ lista.push(22, 10+5, 44, 100/5);
 
 // Tipos Personalizados (Type Alias)
 type Transacao = {
-    tipoTransacao: string;
+    tipoTransacao: TipoTransacao;
     data: Date;
     valor: number;
 }
 
+// Enum 
+enum TipoTransacao {
+    DEPOSITO = "Depósito",
+    TRANSFERENCIA = "Transferência",
+    PAGAMENTO_BOLETO = "Pagamento de Boleto"
+}
+
 const novaTransacao: Transacao = {
-    tipoTransacao: "",
+    tipoTransacao: TipoTransacao.DEPOSITO,
     data: new Date(),
     valor: 0
 }
