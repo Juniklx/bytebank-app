@@ -1,0 +1,24 @@
+function formatarMoeda(valor: number): string {
+    return valor.toLocaleString("pt-BR", {
+        currency: "BRL",
+        style: "currency",
+    });
+}
+
+function formatarData(data: Date, formato: FormatoData = FormatoData.PADRAO): string {
+    if (formato === FormatoData.DIA_SEMANA_DIA_MES_ANO) {
+        return data.toLocaleDateString("pt-BR", {
+            weekday: "long",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+        });
+    }
+    else if (formato === FormatoData.DIA_MES) {
+        return data.toLocaleDateString("pt-BR", {
+            month: "2-digit",
+            day: "2-digit"
+        });
+    }
+    return data.toLocaleString("pt-BR");
+}
